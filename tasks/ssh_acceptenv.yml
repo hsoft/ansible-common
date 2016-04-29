@@ -1,0 +1,7 @@
+---
+- name: Ensure that AcceptEnv is not present in sshd_config
+  lineinfile: dest=/etc/ssh/sshd_config state=absent regexp="^AcceptEnv"
+  register: sshdconfig_result
+- name: Restart sshd
+  service: name=sshd state=restarted
+  when: sshdconfig_result|changed
