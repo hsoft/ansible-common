@@ -1,0 +1,9 @@
+---
+common_required_packages:
+  - rsync
+  - sudo
+  - build-essential
+  - git
+
+# Packages to install in addition to `common_required_packages`
+common_extra_packages: []
