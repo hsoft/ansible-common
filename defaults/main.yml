@@ -1,6 +1,7 @@
 ---
 common_required_packages:
   - sudo
+  - ca-certificates
 
 # Packages to install in addition to `common_required_packages`
 common_extra_packages: []
