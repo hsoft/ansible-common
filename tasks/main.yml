@@ -1,1 +1,2 @@
-- include: packages.yml
+---
+- import_tasks: packages.yml

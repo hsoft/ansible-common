@@ -1,14 +1,4 @@
 ---
-# ansible's apt module requires aptitude and python-apt. Some debian environments don't have it,
-# which is unfortunate. The two tasks below fix that.
-- name: Do we have aptitude?
-  stat: path=/usr/bin/aptitude
-  register: aptitude_stat
-
-- name: Ensure that requirements for the apt action are present
-  shell: "apt-get update && apt-get install -y python-apt aptitude"
-  when: not aptitude_stat.stat.exists
-
 - name: apt-get update/upgrade
   apt: update_cache=yes upgrade=yes cache_valid_time=3600
 
